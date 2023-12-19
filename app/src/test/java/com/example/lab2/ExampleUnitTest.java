@@ -11,7 +11,38 @@ import static org.junit.Assert.*;
  */
 public class ExampleUnitTest {
     @Test
-    public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
+    public void countSymbols_NullInput_ReturnsZero() {
+        int result = TextCounter.countSymbols(null);
+        assertEquals(0, result);
+    }
+
+    @Test
+    public void countSymbols_EmptyInput_ReturnsZero() {
+        int result = TextCounter.countSymbols("");
+        assertEquals(0, result);
+    }
+
+    @Test
+    public void countSymbols_ValidInput_ReturnsCorrectCount() {
+        int result = TextCounter.countSymbols("Hello, World!");
+        assertEquals(13, result);
+    }
+
+    @Test
+    public void countWords_NullInput_ReturnsZero() {
+        int result = TextCounter.countWords(null);
+        assertEquals(0, result);
+    }
+
+    @Test
+    public void countWords_EmptyInput_ReturnsZero() {
+        int result = TextCounter.countWords("");
+        assertEquals(0, result);
+    }
+
+    @Test
+    public void countWords_ValidInput_ReturnsCorrectCount() {
+        int result = TextCounter.countWords("This is a test sentence.");
+        assertEquals(5, result);
     }
 }
